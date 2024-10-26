@@ -9,6 +9,7 @@ public class Program
         _phoneBook = new PhoneBook.PhoneBook();
         
         Console.OutputEncoding = Encoding.UTF8;
+        Console.InputEncoding = Encoding.UTF8;
         bool isRunning = true;
         while (isRunning)
         {
@@ -18,7 +19,8 @@ public class Program
             Console.WriteLine("4. Удалить контакт");
             Console.WriteLine("5. Поиск контакта");
             Console.WriteLine("6. Сохранить книгу");
-            Console.WriteLine("7. Выйти");
+            Console.WriteLine("7. Загрузить книгу");
+            Console.WriteLine("8. Выйти");
 
             int choice = Convert.ToInt32(Console.ReadLine());
 
@@ -42,7 +44,11 @@ public class Program
                 case 6:
                     _phoneBook.SaveBook();
                     break;
+                    
                 case 7:
+                    _phoneBook.LoadBook();
+                    break;
+                case 8:
                     isRunning = false;
                     break;
                 default:
